@@ -45,6 +45,9 @@
         var autolinker = new Autolinker({ truncate: { length: 30, location: 'smart' } });
         var bounds_group = new L.featureGroup([]);
 
+        map.createPane('pane_GoogleSatellite_0');
+        // ... (existing code for tile layers, GeoJSON layers, etc.)
+
         function makeResponsive() {
             var bounds = bounds_group.getBounds();
             map.fitBounds(bounds);
@@ -61,10 +64,7 @@
             makeResponsive();
         });
 
-        map.createPane('pane_GoogleSatellite_0');
-        // ... (existing code for tile layers, GeoJSON layers, etc.)
-
-        // Add the makeResponsive function to the end of the script
+        // Call makeResponsive after adding layers to the map
         makeResponsive();
     </script>
 </body>
